@@ -11,3 +11,4 @@ CREATE TABLE `Patient` (
 );
 
 CREATE INDEX `IX_Patient_MainDoctorNationalCode` ON `Patient` (`MainDoctorNationalCode`);
+INSERT INTO `Patient`(`NationalCode`, `BirthYear`, `Password`, `Name`, `LastName`, `Address`, `MainDoctorNationalCode`) VALUES('783001', '1379', '123456', 'Ahmad', 'Salimi', 'Ghadir st.', '228001');

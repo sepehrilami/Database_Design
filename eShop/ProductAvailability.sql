@@ -12,4 +12,4 @@ CREATE TABLE `ProductAvailability` (
 
 CREATE INDEX `IX_ProductAvailability_ProductId` ON `ProductAvailability` (`ProductId`);
 
-INSERT INTO `ProductAvailability`(`Color`, `Size`, `AvailableCount`, `ProductId`) VALUES('Reg', 'XL', 50, 1);
+INSERT INTO `ProductAvailability`(`Color`, `Size`, `AvailableCount`, `ProductId`) VALUES('Red', 'XL', 50, 1);

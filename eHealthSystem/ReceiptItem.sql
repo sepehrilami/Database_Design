@@ -6,7 +6,7 @@ CREATE TABLE `ReceiptItem` (
     `ReceiptId` int NOT NULL,
     PRIMARY KEY (`MedicineCommercialName`, `ReceiptId`),
     CONSTRAINT `FK_ReceiptItem_Medicine_MedicineCommercialName` FOREIGN KEY (`MedicineCommercialName`) REFERENCES `Medicine` (`CommercialName`) ON DELETE CASCADE,
-    CONSTRAINT `FK_ReceiptItem_Receipt_ReceiptId` FOREIGN KEY (`ReceiptId`) REFERENCES `Receipt` (`Id`) ON DELETE RESTRICT
+    CONSTRAINT `FK_ReceiptItem_Receipt_ReceiptId` FOREIGN KEY (`ReceiptId`) REFERENCES `Receipt` (`Id`) ON DELETE CASCADE
 );
 
 CREATE INDEX `IX_ReceiptItem_MedicineCommercialName` ON `ReceiptItem` (`MedicineCommercialName`);

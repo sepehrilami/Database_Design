@@ -1,11 +1,10 @@
 -- Depends on Medicine and Receipt
 
 CREATE TABLE `ReceiptItem` (
-    `Id` int NOT NULL AUTO_INCREMENT,
     `MedicineCommercialName` varchar(30) NOT NULL,
     `Count` int NOT NULL DEFAULT 1,
     `ReceiptId` int NULL,
-    PRIMARY KEY (`Id`),
+    PRIMARY KEY (`MedicineCommercialName`, `ReceiptId`),
     CONSTRAINT `FK_ReceiptItem_Medicine_MedicineCommercialName` FOREIGN KEY (`MedicineCommercialName`) REFERENCES `Medicine` (`CommercialName`) ON DELETE CASCADE,
     CONSTRAINT `FK_ReceiptItem_Receipt_ReceiptId` FOREIGN KEY (`ReceiptId`) REFERENCES `Receipt` (`Id`) ON DELETE RESTRICT
 );

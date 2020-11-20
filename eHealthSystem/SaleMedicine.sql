@@ -1,11 +1,10 @@
-Depends on Medicine and Pharmacy
+-- Depends on Medicine and Pharmacy
 
 CREATE TABLE `SaleMedicine` (
-    `Id` int NOT NULL AUTO_INCREMENT,
     `MedicineCommercialName` varchar(30) NOT NULL,
     `PharmacyId` int NOT NULL,
     `Price` int NOT NULL DEFAULT 10000,
-    PRIMARY KEY (`Id`),
+    PRIMARY KEY (`MedicineCommercialName`, `PharmacyId`),
     CONSTRAINT `FK_SaleMedicine_Medicine_MedicineCommercialName` FOREIGN KEY (`MedicineCommercialName`) REFERENCES `Medicine` (`CommercialName`) ON DELETE CASCADE,
     CONSTRAINT `FK_SaleMedicine_Pharmacy_PharmacyId` FOREIGN KEY (`PharmacyId`) REFERENCES `Pharmacy` (`Id`) ON DELETE CASCADE
 );

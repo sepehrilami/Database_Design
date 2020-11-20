@@ -11,4 +11,4 @@ CREATE TABLE `User` (
     PRIMARY KEY (`Email`)
 );
 
-INSERT INTO `User`(`Email`, `Name`, `LastName`, `City`, `Address`, `Phone`, `Password`) VALUES('sepehr@ilami.com', 'Sepehr', 'Ilami', 'Shiraz', 'Mali Abad St.' '09123456789', '123456q1');
+INSERT INTO `User`(`Email`, `Name`, `LastName`, `City`, `Address`, `Phone`, `Password`) VALUES('sepehr@ilami.com', 'Sepehr', 'Ilami', 'Shiraz', 'Mali Abad St.', '09123456789', '123456q1');

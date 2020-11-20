@@ -15,4 +15,4 @@ CREATE TABLE `Contract` (
 CREATE INDEX `IX_Contract_CompanyName` ON `Contract` (`CompanyName`);
 CREATE INDEX `IX_Contract_PharmacyId` ON `Contract` (`PharmacyId`);
 
-INSERT INTO `Contract`(`StartDate`, `EndDate`, `Content`, `PharmacyId`, `CompanyName`) VALUES('1/1/1', '2/2/2', '6 months for 10000$', '1', 'Company1');
+INSERT INTO `Contract`(`StartDate`, `EndDate`, `Content`, `PharmacyId`, `CompanyName`) VALUES('2020-07-21', '2021-07-21', '1 year for 10000$', 1, 'Company1');

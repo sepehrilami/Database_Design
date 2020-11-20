@@ -1,11 +1,10 @@
 -- Depends on ProductAvailability and Cart
 
 CREATE TABLE `CartProduct` (
-    `Id` int NOT NULL AUTO_INCREMENT,
     `Count` int NOT NULL DEFAULT 1,
     `ProductAvailabilityId` int NOT NULL,
     `CartUserEmail` varchar(100) NOT NULL,
-    PRIMARY KEY (`Id`),
+    PRIMARY KEY (`ProductAvailabilityId`, `CartUserEmail`),
     CONSTRAINT `FK_CartProduct_Cart_CartUserEmail` FOREIGN KEY (`CartUserEmail`) REFERENCES `Cart` (`UserEmail`) ON DELETE CASCADE,
     CONSTRAINT `FK_CartProduct_ProductAvailability_ProductAvailabilityId` FOREIGN KEY (`ProductAvailabilityId`) REFERENCES `ProductAvailability` (`Id`) ON DELETE CASCADE
 );

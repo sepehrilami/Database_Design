@@ -5,3 +5,5 @@ CREATE TABLE `Pharmacy` (
     `Phone` varchar(15) NOT NULL,
     PRIMARY KEY (`Id`)
 );
+
+INSERT INTO `Pharmacy`(`Name`, `Address`, `Phone`) VALUES('Pharmacy1', '22 Jump Street', '0218585');

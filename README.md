@@ -1,2 +1,2 @@
 # Database_Design
-Database Design course - Fall 1399
+Database Design Course - Fall 1399

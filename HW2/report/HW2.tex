@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{commons/course}
+\usepackage{authoraftertitle}
+
+\author{
+احمد سلیمی (۹۷۱۰۶۰۱۳) - علیرضا ایلامی (۹۷۱۰۱۲۸۶)
+}
+\title{
+تمرین سری دوم
+}
+\date{\today}
+
+\begin{document}
+
+\heading{\MyTitle}{}{\MyDate}{\MyAuthor}
+
+
+\section{
+سامانه‌ی سلامت الکترونیک
+}
+
+\lr{
+\begin{itemize}
+	\item PharmaceuticalCompany(\underline{Name}, Phone)
+	\item Doctor(\underline{NationalCode}, Speciality, Experience, Name, LastName)
+	\item Patient(\underline{NationalCode}, BirthYear, Password, Name, LastName, Address, MainDoctorNationalCode(FK))
+	\item Medicine(\underline{CommercialName}, Formula, CompanyName(FK))
+	\item Pharmacy(\underline{Id}, Name, Address, Phone)
+	\item Contract(\underline{Id}, StartDate, EndDate, Content, PharmacyId(FK), CompanyName(FK))
+	\item Receipt(\underline{Id}, PatientNationalCode(FK), DoctorNationalCode(FK), Date)
+	\item ReceiptItem(\underline{MedicineCommercialName(FK), ReceiptId(FK)}, Count)
+	\item SaleMedicine(\underline{MedicineCommercialName(FK), PharmacyId(FK)}, Price)
+\end{itemize}
+}
+
+\section{
+سامانه‌ی فروشگاه اینترنتی پوشاک
+}
+
+\lr{
+\begin{itemize}
+	\item User(\underline{Email}, Name, LastName, City, Address, Phone, Password)
+	\item Cart(\underline{UserEmail(FK)})
+	\item Product(\underline{Id}, Name, Seller, Category, Price)
+	\item ProductAvailability(\underline{Id}, Color, Size, AvailableCount, ProductId(FK))
+	\item CartProduct(\underline{ProductAvailabilityId(FK), CartUserEmail(FK)}, Count)
+	\item Comment(\underline{Id}, Content, Score, UserEmail(FK), ProductId(FK))
+	\item Driver(\underline{NationalCode}, Name, LastName, Phone, PlateNumber)
+	\item ShippingProgram(\underline{Id}, Date, Capacity, DriverNationalCode(FK))
+	\item Order(\underline{Id}, Date, ShippingType, Status, UserEmail(FK), ShippingProgramId(FK))
+	\item OrderProduct(\underline{OrderId(FK), ProductAvailabilityId(FK)}, Count)
+\end{itemize}
+}
+
+\end{document}

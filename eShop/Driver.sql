@@ -1,3 +1,5 @@
+-- No Dependency
+
 CREATE TABLE `Driver` (
     `NationalCode` varchar(10) NOT NULL,
     `Name` varchar(30) NOT NULL,

@@ -1,3 +1,5 @@
+-- Depends on Product
+
 CREATE TABLE `ProductAvailability` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `Color` varchar(30) NOT NULL,

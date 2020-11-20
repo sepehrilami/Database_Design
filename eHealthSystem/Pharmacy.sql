@@ -1,3 +1,5 @@
+-- No Dependency
+
 CREATE TABLE `Pharmacy` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `Name` varchar(30) NOT NULL,

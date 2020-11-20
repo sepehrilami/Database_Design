@@ -1,3 +1,5 @@
+-- Depends on PharmaceuticalCompany
+
 CREATE TABLE `Medicine` (
     `CommercialName` varchar(30) NOT NULL,
     `Formula` varchar(40) NOT NULL,

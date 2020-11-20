@@ -1,3 +1,5 @@
+-- No Dependency
+
 CREATE TABLE `User` (
     `Email` varchar(100) NOT NULL,
     `Name` varchar(30) NOT NULL,

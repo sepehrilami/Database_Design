@@ -1,3 +1,5 @@
+-- Depends on ProductAvailability and Cart
+
 CREATE TABLE `CartProduct` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `Count` int NOT NULL DEFAULT 1,

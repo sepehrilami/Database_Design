@@ -1,3 +1,5 @@
+-- Depends on PharmaceuticalCompany and Pharmacy
+
 CREATE TABLE `Contract` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `StartDate` datetime NOT NULL,

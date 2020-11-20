@@ -1,3 +1,5 @@
+-- Depends on Doctor
+
 CREATE TABLE `Patient` (
     `NationalCode` varchar(10) NOT NULL,
     `BirthYear` int NOT NULL,

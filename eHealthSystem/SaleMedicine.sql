@@ -1,3 +1,5 @@
+Depends on Medicine and Pharmacy
+
 CREATE TABLE `SaleMedicine` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `MedicineCommercialName` varchar(30) NOT NULL,

@@ -1,3 +1,5 @@
+-- Depends on Order and ProductAvailability
+
 CREATE TABLE `OrderProduct` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `OrderId` int NOT NULL,

@@ -1,3 +1,5 @@
+-- Depends on Medicine and Receipt
+
 CREATE TABLE `ReceiptItem` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `MedicineCommercialName` varchar(30) NOT NULL,

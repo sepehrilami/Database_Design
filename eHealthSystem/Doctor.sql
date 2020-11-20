@@ -1,3 +1,5 @@
+-- No Dependency
+
 CREATE TABLE `Doctor` (
     `NationalCode` varchar(10) NOT NULL,
     `Speciality` varchar(20) NOT NULL,

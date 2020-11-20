@@ -1,3 +1,5 @@
+-- No Dependency
+
 CREATE TABLE `Product` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `Name` varchar(30) NOT NULL,

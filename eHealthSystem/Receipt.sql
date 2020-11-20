@@ -1,3 +1,5 @@
+-- Depends on Doctor and Patient
+
 CREATE TABLE `Receipt` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `PatientNationalCode` varchar(10) NOT NULL,

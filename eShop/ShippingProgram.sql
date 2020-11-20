@@ -1,3 +1,5 @@
+-- Depends on Driver
+
 CREATE TABLE `ShippingProgram` (
     `Id` int NOT NULL AUTO_INCREMENT,
     `Date` datetime NOT NULL,

@@ -1,4 +1,4 @@
--- No Dependency
+-- Depends on User
 
 CREATE TABLE `Cart` (
     `UserEmail` varchar(100) NOT NULL,

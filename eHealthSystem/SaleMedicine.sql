@@ -10,4 +10,5 @@ CREATE TABLE `SaleMedicine` (
 
 CREATE INDEX `IX_SaleMedicine_MedicineCommercialName` ON `SaleMedicine` (`MedicineCommercialName`);
 CREATE INDEX `IX_SaleMedicine_PharmacyId` ON `SaleMedicine` (`PharmacyId`);
-INSERT INTO `SaleMedicine`(`MedicineCommercialName`, `PharmacyId`, `Price`) VALUES('AdultCold', '1', '15000');
+
+INSERT INTO `SaleMedicine`(`MedicineCommercialName`, `PharmacyId`, `Price`) VALUES('AdultCold', 1, 15000);

@@ -10,4 +10,5 @@ CREATE TABLE `ReceiptItem` (
 
 CREATE INDEX `IX_ReceiptItem_MedicineCommercialName` ON `ReceiptItem` (`MedicineCommercialName`);
 CREATE INDEX `IX_ReceiptItem_ReceiptId` ON `ReceiptItem` (`ReceiptId`);
-INSERT INTO `ReceiptItem`(`MedicineCommercialName`, `Count`, `ReceiptId`) VALUES('AdultCold', '30', '1');
+
+INSERT INTO `ReceiptItem`(`MedicineCommercialName`, `Count`, `ReceiptId`) VALUES('AdultCold', 30, 1);

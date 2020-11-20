@@ -7,5 +7,4 @@ CREATE TABLE `Doctor` (
     PRIMARY KEY (`NationalCode`)
 );
 
-INSERT INTO `Doctor`(`NationalCode`, `Speciality`, `Experience`, `Name`, `LastName`) VALUES('228001', 'Orology',
-'10', 'Uncle', 'Johnny');
+INSERT INTO `Doctor`(`NationalCode`, `Speciality`, `Experience`, `Name`, `LastName`) VALUES('228001', 'Orology', 10, 'Uncle', 'Johnny');

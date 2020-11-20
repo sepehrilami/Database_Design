@@ -7,4 +7,5 @@ CREATE TABLE `Medicine` (
 );
 
 CREATE INDEX `IX_Medicine_CompanyName` ON `Medicine` (`CompanyName`);
+
 INSERT INTO `Medicine`(`CommercialName`, `Formula`, `CompanyName`) VALUES('AdultCold', 'CH3COOH', 'Company1');

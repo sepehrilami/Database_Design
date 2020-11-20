@@ -10,4 +10,5 @@ CREATE TABLE `Receipt` (
 
 CREATE INDEX `IX_Receipt_DoctorNationalCode` ON `Receipt` (`DoctorNationalCode`);
 CREATE INDEX `IX_Receipt_PatientNationalCode` ON `Receipt` (`PatientNationalCode`);
-INSERT INTO `Receipt`(`PatientNationalCode`, `DoctorNationalCode`, `Date`) VALUES('783001', '228001', '3/3/3');
+
+INSERT INTO `Receipt`(`PatientNationalCode`, `DoctorNationalCode`, `Date`) VALUES('783001', '228001', '2020-12-03');

@@ -3,3 +3,5 @@ CREATE TABLE `PharmaceuticalCompany` (
     `Phone` varchar(15) NOT NULL,
     PRIMARY KEY (`Name`)
 );
+
+INSERT INTO `PharmaceuticalCompany`(`Name`, `Phone`) VALUES('Company1', '0216616');

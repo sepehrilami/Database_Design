@@ -1,3 +1,8 @@
+-- Ahmad Salimi (97106013) 
+-- Alireza Ilami (97101286)
+
+use db_HW2_2;
+
 -- 1
 
 

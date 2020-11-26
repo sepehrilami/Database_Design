@@ -1,7 +1,7 @@
 -- 1
 
 
-SELECT `user`.`Email`, SUM(`item`.`Price`)
+SELECT `user`.`Email`, IFNULL(SUM(`item`.`Price`), 0) AS OrderSum
 FROM `user`
 LEFT JOIN (
     SELECT `Id`, `UserEmail`
@@ -16,7 +16,7 @@ GROUP BY `user`.`Email`;
 -- 2
 
 
-SELECT `item`.*, AVG(`comment`.`Score`) as `AverageScore`
+SELECT `item`.*, IFNULL(AVG(`comment`.`Score`), 0) as `AverageScore`
 FROM `item`
 LEFT JOIN `comment` ON `item`.`Id` = `comment`.`ItemId`
 GROUP BY `item`.`Id`
@@ -30,13 +30,13 @@ LIMIT 5;
 SELECT `FirstName`, `LastName`
 FROM `driver`
 WHERE `NationalId` IN (
-    SELECT `NationalId`
+    SELECT DISTINCT `NationalId`
     FROM (
-        SELECT `transport`.`DriverId` as `NationalId`, SUM(`order_variety`.`Quantity`) as `QuantitySum`, `transport`.`Capacity` as `Capacity`
-        FROM `saleOrder`
+        SELECT `transport`.`DriverId` as `NationalId`, IFNULL(SUM(`order_variety`.`Quantity`), 0) as `QuantitySum`, IFNULL(SUM(`transport`.`Capacity`), 0) as `Capacity`
+        FROM `transport`
+        LEFT JOIN `saleOrder` ON `transport`.`Id` = `saleOrder`.`TransportId`
         LEFT JOIN `order_variety` ON `saleOrder`.`Id` = `order_variety`.`OrderId`
-        LEFT JOIN `transport` ON `transport`.`Id` = `saleOrder`.`TransportId`
-        GROUP BY `saleOrder`.`TransportId`
+        GROUP BY `transport`.`DriverId`
     ) as `JoinedTable`
     WHERE `JoinedTable`.`QuantitySum`  < `JoinedTable`.`Capacity`
 );
@@ -45,20 +45,15 @@ WHERE `NationalId` IN (
 -- 4
 
 
-SELECT variety_item.Id, variety_item.Color, variety_item.Size
+SELECT Id, Color, Size
 FROM variety_item
-LEFT JOIN (
-    SELECT Id, SUM(Quantity) as Quantity
-    FROM variety_item
-    GROUP BY Id
-) Quantities ON variety_item.Id = Quantities.Id
-WHERE Quantities.Quantity = 0;
+WHERE Quantity = 0;
 
 
 -- 5
 
 
-SELECT user.*
+SELECT DISTINCT user.*
 FROM (
     SELECT DISTINCT UserEmail
     FROM saleOrder
@@ -70,17 +65,13 @@ LEFT JOIN user ON user.Email = PendingOrders.UserEmail;
 -- 6
 
 
-SELECT driver.*
+SELECT DISTINCT driver.*
 FROM (
-    SELECT Email
-    FROM user
-    WHERE `Email` = 'abcd@gmail.com'
-) AS UserData
-LEFT JOIN saleOrder ON saleOrder.UserEmail = UserData.Email
-LEFT JOIN (
-    SELECT DriverId, Id
+    SELECT DISTINCT DriverId, Id
     FROM transport
     WHERE `TransportDate` = '1399-08-20'
-) TransportDriver ON TransportDriver.Id = saleOrder.TransportId
-LEFT JOIN driver ON driver.NationalId = TransportDriver.DriverId;
+) TransportDriver
+LEFT JOIN saleOrder ON TransportDriver.Id = saleOrder.TransportId
+LEFT JOIN driver ON driver.NationalId = TransportDriver.DriverId
+WHERE saleOrder.UserEmail = 'abcd@gmail.com';
 

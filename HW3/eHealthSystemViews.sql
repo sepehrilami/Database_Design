@@ -29,3 +29,24 @@ WHERE prescription_details.PatientId = 0012345678;
 SELECT DrugName, Price
 FROM prices
 WHERE prices.PharmacyId = 1;
+
+-- 4 a.1
+
+SELECT NationalId
+FROM driver
+GROUP BY NationalId;
+
+-- 4 a.2
+
+INSERT INTO transport (PlateNumber)
+VALUES (5);
+
+INSERT INTO driver (NationalId, LastName, Telephone)
+VALUES ('1234567890', 'Safari', '63j86547');
+
+-- 4 a.3
+
+DELETE FROM driver
+JOIN transport
+GROUP BY driver.NationalId
+HAVING Count(transport.Id) > 5;

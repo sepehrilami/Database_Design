@@ -17,3 +17,15 @@ GROUP BY PatientId, DrugName;
 CREATE VIEW prices AS
 SELECT DrugName, PharmacyId, Price
 FROM sale;
+
+-- 3 a
+
+SELECT DISTINCT DoctorId
+FROM prescription_details
+WHERE prescription_details.PatientId = 0012345678;
+
+-- 3 b
+
+SELECT DrugName, Price
+FROM prices
+WHERE prices.PharmacyId = 1;

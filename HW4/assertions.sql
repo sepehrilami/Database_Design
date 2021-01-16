@@ -11,7 +11,7 @@ CREATE
     BEGIN
         IF New.Staus = 'Registered' THEN
             UPDATE variety_item V
-            LEFT JOIN order_variety O ON (
+            JOIN order_variety O ON (
                  V.Id = O.VarietyId AND
                  V.Color = O.Color AND
                  V.Size = O.Size

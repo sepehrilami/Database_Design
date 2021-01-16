@@ -4,22 +4,20 @@ CREATE ASSERTION DrugLimit
 
 DELIMITER $$
 CREATE
-    TRIGGER SubmitOrder
+    TRIGGER RegisterOrder
     AFTER UPDATE
-    ON `saleOrder`
+    ON saleOrder
     FOR EACH ROW
     BEGIN
         IF New.Staus = 'Registered' THEN
-            UPDATE variety_item
-            SET `Quantity` = `Quantity` - 1
-            WHERE variety_item.Id IN (
-                SELECT VarietyId as Id
-                FROM order_variety
-                WHERE order_variety.OrderId = New.Id
-            );
+            UPDATE variety_item V
+            LEFT JOIN order_variety O ON (
+                 V.Id = O.VarietyId AND
+                 V.Color = O.Color AND
+                 V.Size = O.Size
+            )
+            SET V.Quantity = V.Quantity - O.Quantity
+            WHERE O.OrderId = New.Id;
         END IF;
-    END$$    
-
+    END$$
 DELIMITER ;
-
-

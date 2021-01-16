@@ -1,5 +1,11 @@
 CREATE ASSERTION DrugLimit
-    CHECK ((SELECT Quantity FROM drug_prescription) <= 5);
+    CHECK (
+        NOT EXISTS (
+            SELECT *
+            FROM drug_prescription
+            WHERE Quantity > 5
+        )
+    );
 
 
 DELIMITER $$
